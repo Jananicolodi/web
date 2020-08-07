@@ -25,12 +25,12 @@ class RepositorioController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.pdf');
+        // return view('admin.pages.pdf');
 
-        // $products = Product::paginate();
-        // return view('admin.pages.sistemas_internet.index', [
-        //     'products' => $products
-        // ] );
+        $products = Product::paginate();
+        return view('admin.pages.sistemas_internet.index', [
+            'products' => $products
+        ] );
      
     }
 
@@ -61,7 +61,7 @@ class RepositorioController extends Controller
         } 
        
        $this->repository->create($data);
-        return redirect()->route('products.index');
+        return redirect()->route('sistemas_internet.index');
     }
 
     /**

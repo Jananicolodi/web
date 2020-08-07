@@ -1,16 +1,8 @@
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo asset('css/login.css')?>" type="text/css">>
-    <title>IFFAR - Repositorio</title>
-</head>
-
+@extends('admin.layout.app')
+{{-- php artisan view:clear --}}
+@section('content')
+@section('title','IFFAR - Repositorio')
 <style>
     body {
         background-image: url(img/img-fundo-login.jpg);
@@ -38,7 +30,7 @@
                 <input type="email" id="login" class="text-black" name="usuario" placeholder="Usuario" required>
                 <input type="password" id="password" class="text-black" name="senha" placeholder="Senha" maxlength="8"
                     required>
-                <button class="btn btn-success btn-lg my-sm-2" type="submit" style="width: 35%;">Pronto!</button>
+                <button class="btn btn-success btn-lg my-sm-2 site_iffar" type="submit" style="width: 35%;">Pronto!</button>
             </form>
 
             <!-- Remind Passowrd -->
@@ -55,3 +47,4 @@
 </body>
 
 </html>
+@endsection 

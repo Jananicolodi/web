@@ -5,7 +5,7 @@
         <h1>Cadastrar Novo Produto</h1>
     @include('admin.includes.alerts')
         <form action="{{ route('products.store')}}" method="post" enctype="multipart/form-data">
-            @include('admin.pages.products._partials.form')
+            @include('admin.pages.sistemas_internet._partials.form')
 
         </form>   
     @endsection    

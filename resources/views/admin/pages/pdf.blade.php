@@ -14,12 +14,12 @@ require $rootDir . "/vendor/autoload.php";
 // Parse pdf file and build necessary objects.
 $parser = new \Smalot\PdfParser\Parser();
 // $pdf    = $parser->parseFile("/trabalhos/a.pdf");
+$pdf = $parser->parseFile("trabalhos/b.pdf");
+$text = $pdf->getText();
 
-// $text = $pdf->getText();
-
-// echo $text;
-// echo PHP_EOL;
-// echo PHP_EOL;
+echo $text;
+echo PHP_EOL;
+echo PHP_EOL;
 
 
 

@@ -10,6 +10,9 @@ Route::resource('products','RepositorioController');//->middleware(['auth','chec
 Route::get('/login', function () {
     return "Login";
 })->name('login');
+Route::get('/ler_PDF',function(){
+    return view('admin.pages.pdf');
+});
 
 
 Auth::routes(['register' => false]);
