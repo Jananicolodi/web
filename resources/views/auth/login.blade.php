@@ -15,6 +15,8 @@
 </style>
 
 <body class="text-center bg-success">
+    @include('admin.pages.sistemas_internet._partials.cabecalho')
+
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
@@ -45,6 +47,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
+@include('admin.pages.sistemas_internet._partials.rodape')
 
 </html>
 @endsection 

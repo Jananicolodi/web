@@ -26,44 +26,75 @@ class RepositorioController extends Controller
     public function index()
     {
         // return view('admin.pages.pdf');
-
+        
         $products = Product::paginate();
         return view('admin.pages.sistemas_internet.index', [
             'products' => $products
-        ] );
-     
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+            ] );
+            
+        }
+        
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
     public function create()
     {
 
-        return view('admin.pages.sistemas_internet.create');
+        return view('admin.pages.sistemas_internet.cadastro_professor');
     }
+    
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+    public function create_professor()
+    {
 
-     /**
-      * Store a newly created resource in storage.
-      *
+        return view('admin.pages.sistemas_internet.cadastro_professor');
+    }
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+    public function ver_arquivo()
+    {
+
+        return view('admin.pages.sistemas_internet.ver_arquivo');
+    }
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+    public function perfil_egresso()
+    {
+
+        return view('admin.pages.sistemas_internet.perfil_egresso');
+    }
+    
+    /**
+     * Store a newly created resource in storage.
+     *
      * @param  \App\Http\Requests\StoreUpdateProductRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreUpdateProductRequest $request)
     {
-       $data = $request->only('name','description','price');
-       if($request->hasFile('image') && $request->image->isValid()){
+        $data = $request->only('name','description','price');
+        if($request->hasFile('image') && $request->image->isValid()){
             $imagePath = $request->image->store('products');
-
+            
             $data['image'] = $imagePath;
         } 
-       
+        
        $this->repository->create($data);
-        return redirect()->route('sistemas_internet.index');
+       return redirect()->route('sistemas_internet.index');
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -73,14 +104,14 @@ class RepositorioController extends Controller
     public function show($id)
     {
         if(!$product = $this->repository->find($id))
-            return redirect()->back();
+        return redirect()->back();
         // $product = Product::where('id',$id)->first();
         // return "Detalhes do produto {$id}";
         return view('admin.pages.sistemas_internet.show', [
             'product' => $product
         ]);
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -97,7 +128,7 @@ class RepositorioController extends Controller
         dd("OK");
         return view('admin.pages.pdf');
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -108,21 +139,22 @@ class RepositorioController extends Controller
     public function update(StoreUpdateProductRequest $request, $id)
     { 
         if(!$product = $this->repository->find($id))
-            return redirect()->back();
-            $data = $request->all();
-            if($request->hasFile('image') && $request->image->isValid()){
-                
-                if($product->image && Storage::exists($product->image)){
-                  Storage::delete($product->image);  
-                }
-
-                $imagePath = $request->image->store('products');
-    
-                $data['image'] = $imagePath;
-            } 
+        return redirect()->back();
+        $data = $request->all();
+        if($request->hasFile('image') && $request->image->isValid()){
+            
+            if($product->image && Storage::exists($product->image)){
+                Storage::delete($product->image);  
+            }
+            
+            $imagePath = $request->image->store('products');
+            
+            $data['image'] = $imagePath;
+        } 
         $product->update($data);    
         return redirect()->route('products.index');
     }
+ 
     /**
      * Remove the specified resource from storage.
      *
@@ -140,13 +172,13 @@ class RepositorioController extends Controller
         $product->delete();
         return redirect()->route('products.index');
     }
-    public function search(Request $request)
+    public function list(Request $request)
     {
         $filters = $request->except('_token');
         $products = $this->repository->search($request->filter);
-        return view('admin.pages.sistemas_internet.index', [
+        return view('admin.pages.sistemas_internet.list', [
             'products' => $products,
-            'filters' => $filters
+            // 'filters' => $filters
         ] );
     }
 

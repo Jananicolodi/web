@@ -1,9 +1,9 @@
 
 /* BASIC */
 
-html {
-    background-color: #56baed;
-  }
+/* html {
+    /* background-color: #56baed; *
+  } */
   
   body {
     font-family: "Poppins", sans-serif;
@@ -24,7 +24,9 @@ html {
     text-transform: uppercase;
     display:inline-block;
     margin: 40px 8px 10px 8px; 
-    color: #cccccc;
+    background-image: radial-gradient(ellipse at center,#17882c 1%,#00510f 100%);
+    color: transparent;
+    -webkit-background-clip: text;  
   }
   
   
