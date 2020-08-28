@@ -17,6 +17,7 @@ Route::get('/ler_PDF',function(){
 Route::get('/list','RepositorioController@list');
 Route::get('/ver_arquivo','RepositorioController@ver_arquivo');
 Route::get('/perfil_egresso','RepositorioController@perfil_egresso');
+Route::get('/teste','RepositorioController@teste');
 
 
 Auth::routes(['register' => false]);

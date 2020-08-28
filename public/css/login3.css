@@ -44,6 +44,7 @@
   }
   
   #formContent {
+    margin-top: 10%;
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: #fff;

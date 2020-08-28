@@ -80,7 +80,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
             <ul class="navbar-nav clearfix mr-auto">
-        <li>
+        {{-- <li>
                 <a href="?blog" aria-haspopup="true"><span><i>Templates</i> </span></a>
                 <ul>
                     <li><a href="?design">1° Semestre</a></li>
@@ -91,18 +91,18 @@
                     <li><a href="?html">6° Semestre</a></li>
                     
                 </ul>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
 
                 <a class="nav-link" href="#">Docentes</a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
 
                 <a class="nav-link" href="#">Perfil do Egresso</a>
-            </li>
-                <li class="nav-item">
+            </li> --}}
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="#">PPC</a>
-                </li>
+                </li> --}}
                 <li>
 
                     <a class="nav-link" href="#">Projetos</a>
@@ -111,10 +111,10 @@
 
                     <a class="nav-link" href="#">Fotos</a>
                 </li>
-                <li>
+                {{-- <li>
 
                     <a class="nav-link" href="#">Administrar</a>
-                </li>
+                </li> --}}
             </ul>
             <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

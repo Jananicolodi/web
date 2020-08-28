@@ -44,6 +44,26 @@ class RepositorioController extends Controller
 
         return view('admin.pages.sistemas_internet.cadastro_professor');
     }
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+    public function teste()
+    {
+
+        return view('admin.pages.sistemas_internet.teste');
+    }
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+    public function cadastro_arquivo()
+    {
+
+        return view('admin.pages.sistemas_internet.cadastro_arquivo');
+    }
     
         /**
          * Show the form for creating a new resource.
@@ -176,7 +196,7 @@ class RepositorioController extends Controller
     {
         $filters = $request->except('_token');
         $products = $this->repository->search($request->filter);
-        return view('admin.pages.sistemas_internet.list', [
+        return view('admin.pages.sistemas_internet.list_tcc', [
             'products' => $products,
             // 'filters' => $filters
         ] );
