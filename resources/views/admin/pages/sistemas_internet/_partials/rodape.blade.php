@@ -9,7 +9,7 @@
             {{-- <p>PATROCINADORES</p> --}}
             <div>
                 {{-- <h1>Logo ou imagem</h1> --}}
-                <img src="img/iffar.png" alt="" width="100">
+                <img src="https://www.iffarroupilha.edu.br/cache/images/novamarca_iff_login_125x157-equal.png" alt="" width="100">
             </div>
             <div>
                 <script>
